@@ -44,19 +44,29 @@ int generate_fibonacci_series () {
 
 // The main function
 int main () {
-    // Get the number from a user to generate a fibonacci series of that long
-    int num = 0;
-    cout << "How big fibonacci series which you want to print? : ";
-    cin >> num;
+    try {
+        int num = 0;
+        // Get the number from a user to generate a fibonacci series of that long
+        cout << "How big fibonacci series which you want to print ? : ";
+        cin >> num;
 
-    // Define a vector named series and generate a fibonacci series
-    vector<int> series(num);
-    generate(series.begin(), series.end(), generate_fibonacci_series);
+        if (num <= 0) {
+            throw "Quit.";
+        }
 
-    // Display the generated fibonacci series
-    for (auto it = series.begin(); it < series.end(); it += 1) {
-        cout << *it << " ";
-    }
+        // Define a vector named series and generate a fibonacci series
+        vector<int> series(num);
+        generate(series.begin(), series.end(), generate_fibonacci_series);
+
+        // Display the generated fibonacci series
+        for (auto it = series.begin(); it < series.end(); it += 1)
+            cout << *it << " ";
+        
+        cout << endl;
+
+        // Clear the vector named series
+        series.clear();
+    } catch (...) {};
 
     return 0;
 }
