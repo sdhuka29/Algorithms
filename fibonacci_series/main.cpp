@@ -1,3 +1,7 @@
+// Author Silver Dhuka
+// Date 2021-05-02
+// Brief This is the program to generate a fibonacci series by using a generator function.
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
